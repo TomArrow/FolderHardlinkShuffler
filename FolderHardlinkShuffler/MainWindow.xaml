@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FolderHardlinkShuffler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Folder Hardlink Shuffler (.bat file creator)" Height="250" Width="400">
     <Grid>
+        <StackPanel>
+            <Button x:Name="btnSourceFolder" Click="BtnSourceFolder_Click">Select source folder</Button>
+            <TextBlock x:Name="sourceFolder"></TextBlock>
+            <Button x:Name="btnTargetFolder" Click="BtnTargetFolder_Click">Select target folder</Button>
+            <TextBlock x:Name="targetFolder"></TextBlock>
+            <WrapPanel>
+                <Label>Prefix for numbering</Label>
+                <TextBox x:Name="txtPrefix">file</TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <Label>fill zeros (set to amount of digits in file count)</Label>
+                <TextBox x:Name="txtFillZeros">6</TextBox>
+            </WrapPanel>
+            <Button x:Name="btnDoit" Click="BtnDoit_Click" IsEnabled="False">Create .bat file</Button>
+        </StackPanel>
         
     </Grid>
 </Window>
